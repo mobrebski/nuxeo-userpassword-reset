@@ -9,8 +9,13 @@
 <div class="registrationForm">
 <form action="${This.path}/submitNewPassword" method="post" enctype="application/x-www-form-urlencoded" name="submitNewPassword">
  <input type="hidden" id="PasswordKey" value="${key}" name="PasswordKey"/>
-
+<br/>
  <table>
+            <tr>
+                <td colspan="2" class="directive">
+                    Enter a new password:
+                </td>
+            </tr>
              <tr>
                 <td class="login_label">
 <span class="required">${Context.getMessage('label.registerForm.password')}</span>
@@ -53,6 +58,11 @@
         <div class="infoMessage">
           ${info}                    
         </div>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <a href="${Context.getBaseURL()}">Proceed to Login</a>
       </td>
     </tr>
   </#if>    

@@ -8,7 +8,7 @@
  *
  * Contributors:
  * ldoguin
- * 
+ *
  */
 package org.nuxeo.ecm.user;
 
@@ -19,7 +19,6 @@ import java.util.Map;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage.RecipientType;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -205,11 +204,11 @@ public class RestPassword extends ModuleRoot {
         Mailer.Message msg = mailer.newMessage();
         msg.setFrom(MAIL_FROM);
         msg.setSubject(subject);
-        msg.setRecipient(RecipientType.TO, new InternetAddress(email));
+        msg.setRecipient(javax.mail.Message.RecipientType.TO, new InternetAddress(email));
         msg.setContent(message, "text/html");
         msg.send();
     }
-    
+
     private String getDefaultRepositoryName() {
         if (defaultRepositoryName == null) {
             try {

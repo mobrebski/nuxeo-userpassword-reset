@@ -5,33 +5,51 @@ body, html {
 }
 
 body {
-    min-width: 1000px;
-    font: normal 12px Verdana, sans-serif;
+  font: normal 12px/18pt "Lucida Grande", Arial, sans-serif;
+  background: <%=bodyBackgroundStyle%>;
+  color: #343434;
+  margin: 0;
+  text-align: center;
+  <% if (!disableBackgroundSizeCover) { %>
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  <%} %>
 }
 
-table.main {
-    border: 0px;
-    width: 100%;
-    height: 100%;
-    border-spacing: 0px;
-    border-collapse: collapse;
+.registrationForm {
+  background: <%=loginBoxBackgroundStyle%>;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border-radius: 3px;
+  filter: alpha(opacity = 90);
+  opacity: 0.9;
+  padding: 1.5em 1em 1em;
+  width: 250px }
+  
+.login_label {
+  color: #454545;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 0 0.5em 0 0
 }
 
-table.main td {
-    padding: 0px;
+.login_input {
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px #e0e0e0 inset;
+  padding: .3em;
+  margin: 0 0 .4em;
+  width: 160px
 }
 
-table.header {
-    background-color:black;
-    border: 0px;
-    width: 100%;
-    border-spacing: 0px;
-    border-collapse: collapse;
+.errorMessage, .infoMessage{
+    font-size: 12px;
 }
 
-table.header td {
-    font: normal 12px Verdana, sans-serif;
-    padding: 4px;
-    color: white;   
-    vertical-align: middle;
+.directive{
+    font-size: 16px;
+    margin: 0 0 50px 0;
 }
+
